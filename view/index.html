@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp" class="no-js">
+
+<head>
+    <title>Zikher</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/app/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/ripples.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="css/bootstrap-material-design.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/material.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/ripples.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/typed.js"></script>
+    <script>
+    $(function() {
+        $(".element").typed({
+            strings: ["Eminem", "Radiohead", "Synk", "Ricky Martin"],
+            startDelay: 100,
+            typeSpeed: 80,
+            backDelay: 500,
+            backSpeed: 40
+        });
+    });
+    </script>
+    <style>
+    .typed-cursor {
+        opacity: 1;
+        -webkit-animation: blink 0.7s infinite;
+        -moz-animation: blink 0.7s infinite;
+        animation: blink 0.7s infinite;
+    }
+    
+    @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @-webkit-keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @-moz-keyframes blink {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+    
+    100% {
+        opacity: 1;
+    }
+    
+    .flipkart {
+        width: 49% !important;
+        float: right;
+        padding-top: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        padding-left: 0px;
+    }
+    
+    .amazone {
+        width: 49% !important;
+        float: left;
+        margin-right: 5px;
+        padding-top: 20px;
+        padding-right: 25px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        border-right: 1px dotted #009688;
+    }
+    
+    .thumbnail {
+        padding: 12px;
+        margin-bottom: 0px !important;
+    }
+    
+    .col-sm-4 {
+        padding: 5px;
+    }
+    
+    .price label {
+        color: black !important;
+        top: -5px;
+    }
+    
+    .navbar-brand {
+        margin-left: 60px !important;
+        top: 15px !important;
+    }
+    
+    .top-search {
+        top: 15px;
+        position: relative;
+    }
+    
+    #box {
+        display: none;
+        width: 95%;
+        position: absolute;
+        top: -5px;
+        padding: 0px;
+        height: 100%;
+        left: 5px;
+        /* border-bottom: 2px solid #fff; */
+        /* border-right: 2px solid #fff; */
+        margin: 5% auto 0 auto;
+        background-size: cover;
+        /* border-radius: 5px; */
+        overflow: hidden;
+    }
+    
+    .col-sm-4:hover #box {
+        display: block;
+    }
+    
+    .btn.btn-raised.btn-primary,
+    .btn.btn-raised.btn-success {
+        font-size: 14px;
+    }
+    
+    #overlay {
+        position: relative;
+        background: rgba(0, 0, 0, .25);
+        text-align: center;
+        padding: 100px 30px;
+        height: 97%;
+        opacity: 0;
+        transition: all .1s ease !important;
+        -webkit-transition: opacity .25s ease;
+        cursor: pointer;
+        z-index: 9999;
+    }
+    
+    #box:hover #overlay {
+        opacity: 1;
+    }
+    
+    .col-sm-4:hover #overlay {
+        opacity: 1;
+    }
+    
+    #plus {
+        font-family: Helvetica;
+        font-weight: 900;
+        color: rgba(255, 255, 255, .85);
+        font-size: 96px;
+    }
+    
+    .label.label-info {
+        background-color: transparent !important;
+        color: #777;
+        font-weight: 600;
+        font-size: 16px;
+    }
+    
+    .dropdown-menu {
+        background-color: #eee !important;
+    }
+    
+    del {
+        color: #009688;
+    }
+    </style>
+</head>
+
+<body ng-controller="HomeController">
+    <div class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="row">
+         <!--        <div class="col-sm-2">
+                    <a class="navbar-brand pull-left" style="font-size: 30px;font-weight: 400;">Zikher Search</a>
+                </div> -->
+<div class="col-sm-4 col-sm-offset-2">
+    <div class="form-group">
+        <input style="color:#fff" type="text" class="form-control" ng-model="term" placeholder="Search anything here"  >
+        <span class="form-highlight"></span>
+        <span class="form-bar"></span>
+        <label class="float-label" for="exampleInputEmail1"><i class="fa fa-search"></i> <span class="element"><span> </label>
+    </div>
+    
+</div>
+<div class="col-sm-4">
+<div class="btn-group dropdown top-search">
+    <a href="javascript:void(0)" class="btn active btn-raised">Select Search Type</a>
+    <button type="button" class="btn active btn-raised dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <li><a ng-click="selectType('album')">Album</a></li>
+                <li><a ng-click="selectType('artist')">Artist</a></li>
+
+            </ul>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="container-fluid">
+
+<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" ng-if="searchResult.albums">
+  <thead>
+    <tr>
+      <th style="padding:6px">S. No</th>
+      <th style="padding:6px"><a ng-click="sortBy('name')">Name</a></th>
+      <th style="padding:6px"><a ng-click="sortBy('id')">Id</a></th>
+      <th style="padding:6px">Cover</th>
+      <th style="padding:6px">Available Markets</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="album in searchResult.albums.items | orderBy:propertyName:reverse">
+      <td style="padding:6px">{{$index+1}}</td>
+      <td  style="padding:6px"><a href="{{album.href}}" target="_blank">{{album.name}}</a></td>
+      <td style="padding:6px">{{album.id}}</td>
+      <td style="padding:6px"><img src="{{album.images[0].url}}" width="100px" height="100px" alt=""></td>
+      <td style="padding:6px">{{album.available_markets.join(',')}}</td>
+    </tr>
+   
+  </tbody>
+</table>
+
+<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp" ng-if="searchResult.artists">
+  <thead>
+    <tr>
+      <th style="padding:6px">S. No</th>
+      <th style="padding:6px"><a ng-click="sortBy('name')">Name</a></th>
+      <th style="padding:6px"><a ng-click="sortBy('id')">Id</a></th>
+      <th style="padding:6px">Cover</th>
+      <th style="padding:6px"><a ng-click="sortBy('popularity')">popularity</a></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="album in searchResult.artists.items | orderBy:propertyName:reverse">
+      <td style="padding:6px">{{$index+1}}</td>
+      <td  style="padding:6px"><a href="{{album.href}}" target="_blank">{{album.name}}</a></td>
+      <td style="padding:6px">{{album.id}}</td>
+      <td style="padding:6px"><img src="{{album.images[0].url}}" width="100px" height="100px" alt=""></td>
+      <td style="padding:6px">{{album.popularity}}</td>
+    </tr>
+   
+  </tbody>
+</table>
+
+</div>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="app.js"></script>
+    <script src="bower_components/material-design-lite/material.min.js"></script>
+</body>
+
+</html>
