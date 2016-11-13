@@ -36,7 +36,7 @@ require('./config/routes')(router);
 app.use('/api', router);
 app.get('/',function(req,res){
        
-     res.sendFile('index.html');
+     res.sendFile('index.html',{"root": __dirname+'/View'});
 
 });
 //Install application
